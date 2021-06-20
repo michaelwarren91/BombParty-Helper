@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "JKLM BombParty Helper",
+    "version": "1.0",
+  
+    "description": "Provides you with suggested words to use on your turn.",
+  
+    "icons": {
+      "48": "icons/bomb-48.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.jklm.fun/*"],
+        "exclude_matches": ["*://jklm.fun/*"],
+        "js": ["injector.js", "index.js"],
+        "run_at": "document_idle",
+        "all_frames": true
+      }
+    ],
+
+    "permissions": [
+        "*://api.datamuse.com/*",
+        "webRequest"
+    ]
+  }
